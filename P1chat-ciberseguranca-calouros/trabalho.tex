@@ -1,3 +1,115 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{hyperref}
+
+\begin{document}
+
 %\input{secao1}
+\section{Nova seção}
+
+A primeira atividade do mês de abril, foi uma pesquisa sobre:
+• Malware — programas maliciosos criados para danificar ou espionar computadores. 
+• Ransomware — tipo de vírus que “sequestra” os arquivos e pede dinheiro para devolvê-los. 
+• Trojan (Cavalo de Troia) — programa que se disfarça de algo útil, mas esconde uma ameaça. • Phishing — golpe que tenta enganar a pessoa para roubar senhas ou dados (por e-mail ou site falso). 
+• DDoS — ataque que sobrecarrega um site com tantos acessos que ele sai do ar. 
+• Man-in-the-Middle — quando alguém intercepta a comunicação entre duas pessoas sem que elas percebam.
+
+Cybersegurança: Vírus (Trojan)
+
+Trojan é um tipo de malware que engana o usuário sobre sua verdadeira intenção. Geralmente, é espalhado por engenharia social, e-mails ou até anúncios falsos.
+
+A origem do nome “trojan” ou “trojan horse” (em português, “cavalo de Troia”) vem da própria Guerra de Troia e do cavalo feito por Odisseu. Esse tipo de malware recebe esse nome porque se passa por algo legítimo, como processos de autenticação, com o objetivo de obter senhas dos usuários. Assim, com a senha e a conta, o invasor pode se passar pela vítima.
+
+Hoje em dia, os métodos estão mais complexos: eles se disfarçam de programas legítimos. Contudo, em contraste com vírus e worms, não criam cópias de si mesmos — esse é o motivo de não serem considerados vírus propriamente ditos. Dessa maneira, instalam-se diretamente no computador de forma silenciosa.
+
+A popularidade desse método se deve muito à sua facilidade de uso, pois qualquer pessoa pode acessar o computador de outra apenas com um arquivo. Eles também podem ter programações para realizar autodestruição após um comando ou determinado tempo.
+
+As infecções podem ocorrer, normalmente, de três maneiras: Engenharia social: o usuário recebe um e-mail infectado ou sofre um ataque de phishing; ao clicar ou baixar o arquivo, acaba sendo infectado. Downloads maliciosos: geralmente por sites não confiáveis ou softwares piratas; ao baixar esses programas, a máquina passa a ser infectada. Vulnerabilidades de segurança: menos comuns, ocorrem quando o usuário não baixa nada, mas possui um sistema desatualizado ou antigo, tornando-se alvo de ataques.
+
+Geralmente, após a instalação, o trojan possui três objetivos principais: Roubar dados da vítima, como informações bancárias, senhas ou contas; Controlar remotamente o dispositivo, podendo utilizá-lo em outros ataques; Instalar outros malwares.
+
+Na maioria dos casos, é difícil perceber se você foi vítima ou não. Contudo, há alguns sinais, como: baixo desempenho da máquina (travamentos recorrentes ou até a “tela azul”); alterações na área de trabalho e barra de tarefas (resolução, cor, ícones diferentes); presença de programas desconhecidos no gerenciador de tarefas; aumento de e-mails spam, anúncios e redirecionamentos para sites suspeitos.
+
+Para evitar esses problemas, é recomendável: bloquear certos tipos de anexos em e-mails (como *.EXE, *.BAT, *.CMD, *.SCR e *.JS), evitar programas suspeitos, utilizar antivírus, usar VPNs e manter aplicativos e softwares sempre atualizados.
+
+Alguns dos principais tipos:
+Backdoor: o atacante invade o computador infectado e pode fazer praticamente qualquer coisa, controlando-o remotamente. Pode enviar, receber, executar e apagar arquivos, além de reiniciar o sistema. É frequentemente usado para criar redes zumbi (botnets).
+
+Exploits: tiram proveito de vulnerabilidades em softwares ou aplicativos do computador infectado.
+
+Clampi: aguarda uma transação bancária para roubar dados da conta. É extremamente eficiente em se ocultar e burlar firewalls.
+
+Cryxos: a vítima recebe um aviso falso de infecção com um número de telefone; ao ligar, é chantageada por dinheiro ou induzida a conceder acesso à máquina.
+
+FakeAV: fingem ser antivírus. Assim como os cryxos, tentam extorquir dinheiro com ameaças falsas.
+
+IM: acessam logins de aplicativos de mensagens, como WhatsApp, podendo ser usados para extorsão, envio de malware ou até ataques DDoS.
+
+DDoS: realizam ataques distribuídos de negação de serviço, sobrecarregando um site com múltiplas solicitações, tornando-o indisponível.
+
+Mailfinder: roubam senhas de e-mail para enviar vírus aos contatos da vítima.
+
+Ransom: tornam o computador inutilizável e só restauram o acesso mediante pagamento, sendo usados em extorsões.
+
+Acesso remoto (RAT): permitem ao invasor controle total do dispositivo, possibilitando roubo de dados, espionagem e distribuição de outros malwares para formar botnets
+
+Referências:
+https://www.eset.com/br/blog/cultura/o-que-e-um-trojan-como-funciona-e-como-se-proteger/?srsltid=AfmBOooHcTIms6fcVJ5GxbLAmtbFDxJ3I9ITCs7zlUiFmh9vlXsUFgdB
+https://pt.wikipedia.org/wiki/Cavalo_de_troia_(computação)
+https://www.kaspersky.com.br/resource-center/threats/trojans
+
+
+
+A segunda pesquisa do mês de abril foi:
+Entender o básico de como a internet funciona: 
+• Como dados viajam de um computador a outro de forma simplificada. 
+• O que é um endereço IP (o “endereço” do computador na rede). 
+• O que é uma porta (como “portas de entrada” para diferentes serviços). 
+• O que é cliente-servidor (um computador pede, o outro responde).
+
+• Migração de Dados: 
+A viajem de Dados ocorre por meio de redes físicas (cabos) ou sem fio (wi-fi), possuindo diversas maneiras de se transferir, convertendo informações de uma máquina para outra em sinais elétricos, luz ou rádio, sendo transmitidos e recebidos em pacotes. Esses pacotes podem seguir caminhos diferentes pela internet para evitar congestionamentos e, ao chegar ao destino são organizados novamente na ordem correta. Isso pode ser feita de forma que se conecte a mais do que dois computadores podendo conectar cada um em um certo computador, porém é uma forma muito complicada, por isso é utilizado um roteador que pode conectar a outros roteadores para transmitir esses dados de uma forma que necessite menos cabos, podendo se escalar a uma fonte infinita de computadores, sendo uma forma mais facilitada o uso de um provedor de serviços de internet(ISP) feito especificamente para isso, facilitando ainda mais a conexão.
+
+• IPs (Internet Protocol): 
+O endereço IP é usado para identificar um computador para a recepção ou o envio de dados de um dispositivo específico, possuindo geralmente um formato composto em série de 4 números separados por pontos, por exemplo: 192.123.5.29. Sendo uma forma eficiente para computadores, porém para humanos, não possui essa vantagem, por isso IPs podem ser apelidados, conhecidos como nome de domínio, por exemplo google.com, facilitando a sua compreensão, assim como ajuda na sua localização visto que endereços IPs mudam toda hora. IPs também possuem diferenças quanto ao IP público e privado, sendo o público o endereço do roteador na internet, já a privado é o endereço da sua própria máquina. Os IPs também possuem tipos diferentes de formatos como o: IPV4(Protocal Version 4): Usa endereços de 32 bits (123.456.7.89) IPV6(Protocal Version 6): Usa endereços de 128 bits (alfanuméricos, 1234 : db7 : f f00 : 32 : 8764) Esses tipos possuem diferenças quanto sua capacidade, formato, segurança (IPsec embutido em IPV6 e opcional em IPV4), configuração (IPV6 possui autoconfiguração automática) e cabeçalho (IPV6 mais simples).
+
+• Portas de Entrada (Portas de Protocolos de Rede):
+Portas de Redes são um meio para que um serviço funcione, direcionando aplicações e serviços para um destino receber dados de uma forma simplificada, cada porta de entrada possui grupos diferentes como por exemplo a porta 80/443 é usada para tráfego de web (navegador) e a portar 22 usada pra conexão segura (SSH). Cada porta possui 16 bits, existem 65534 portas possíveis que cada servidor pode usar, tendo outros protocolos usados por meio de uma autoridade de atribuição de números da internet (IANA), possuindo cada porta um tipo de serviço para que não haja conflitos ou imprevistos na internet como:  53 = DNS 67,68 = DHCP 80 = HP 110 = POP3 443 = HTTPS O TCP e UDP são os protocolos mais básicos da comunicação de computadores TCP: Apresenta latência na transferência de dados, porém garantem a entrega dos dados UDP: Transmite grandes quantidades de dados, porém não garantem a entrega dos dados Ambos os protocolos necessitam de endereço IP e portas para funcionar, devido terem comportamentos é recomendado utilizar o (IANA), tendo algumas portas que somente funcionam com TCP ou UDP, assim como TCP e UDP. 
+
+• Cliente Servidor: 
+Cliente Servidor é modelo de rede baseado em requisições e respostas, os clientes fazem as requisições de acesso aos serviços ou recursos e os servidores fornece o serviço ou o recurso designado na rede, sendo necessário uma rede que permite a conexão entre os clientes e servidores. 
+
+Referências:
+Como a Internet funciona? - Aprendendo desenvolvimento web | MDN
+https://www.youtube.com/watch?v=W-_jjmkUH9k https://www.youtube.com/watch?v=MWYZj6SJ9j
+https://www.youtube.com/watch?v=jWo792sVGBY&t=85s https://www.youtube.com/watch?v=FaTlrHq8RKM 
+https://www.youtube.com/watch?v=Xmu-EpxcROM&t=147s
+
+
+A terceira atividade do mês de abril, foi algumas revisões sobre python
+
+Faça um programa que receba o raio r, e exiba o comprimento da circunferência C, a área do círculo Ac, a área superficial da esfera As e o volume da esfera V.
+
+C = 2πr			Ac = πr2 		V=(4/3)* πr3		As = 4πr2
+
+raio = float(input('informe seu raio\n'))
+pi = 3.1415
+c = 2*pi*raio
+v = (4/3)*pi*raio**3
+ac = pi*raio**2
+ass = 4*pi*raio**2
+print(f"comprimeto: {c}\nvolume: {v}\narea do circulo: {ac}\narea superficial: {ass}")
+
+Na primeira semana de Maio, a atividade foi:
+Configurar o ambiente de desenvolvimento: 
+• Instalar o Python 3 (se necessário) e o VS Code com a extensão Python. 
+• Criar um ambiente virtual (venv): Uma “caixa isolada” que guarda as bibliotecas do projeto sem afetar o resto do computador: – Criar: python -m venv venv – Ativar (Linux/Mac): source venv/bin/activate – Ativar (Windows): venv\Scripts\activate 
+• Entender o pip (gerenciador de pacotes) e criar um requirements.txt
+
+Nessa atividade, eu instalei uma venv no VsCode, com a versão 3.14.4 do python. Aprendi também que para ativar o meu ambiente virtual eu utilizo o comando: .\venv\Scripts\activate, e para desativar ultiliza-se o comando: deactivate.
 
 %\input{secao2}
+
+\end{document}
