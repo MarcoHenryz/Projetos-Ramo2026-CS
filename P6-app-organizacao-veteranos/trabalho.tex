@@ -1,3 +1,41 @@
-%\input{secao1}
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
 
-%\input{secao2}
+\begin{document}
+
+\section{Metas e Atividades Realizadas de Maio}
+
+\subsection{Objetivos propostos para o mês:}
+\begin{enumerate}
+    \item \textbf{Estruturação de Dados:} Configuração do ambiente Django e criação dos modelos fundamentais para usuários, disciplinas e semestres no banco de dados.
+    \item \textbf{Base de Interface:} Inicialização do projeto em React Native com a definição da navegação base e implementação das telas de autenticação.
+\end{enumerate}
+
+\subsection{Atividades realizadas no mês:}
+
+\subsubsection{Configuração Base do Repositório}
+O repositório oficial no GitHub foi criado e configurado seguindo a arquitetura de monorepositório, estabelecendo as pastas raiz backend e frontend para manter o desenvolvimento das equipes isolado e organizado. Todos os integrantes foram integrados como colaboradores.
+
+\subsubsection{Divisão Técnica da Equipe}
+Para garantir o paralelismo entre a inteligência do servidor e a interface visual, a equipe foi segmentada em duas frentes de trabalho:
+\begin{itemize}
+    \item \textbf{Frontend (3 integrantes):} Responsáveis pela criação da interface fluida, componentes reutilizáveis e fluxo de navegação. Composta pelos alunos Julio, Nicolas Fenato e Laura Brenny
+    \item \textbf{Backend (2 integrantes):} Focados na modelagem de dados, segurança da API e lógica de processamento no servidor. Composta pelos alunos Rafael Pinheiro e Eduardo Trautwein.
+\end{itemize}
+\subsubsection{Fundação do Backend}
+O ambiente do servidor foi inicializado localmente com o isolamento de um ambiente virtual venv para evitar conflitos de bibliotecas. Realizou-se a instalação estruturada do framework Django e do Django REST Framework, criando os arquivos bases de gerenciamento do sistema como o manage.py e a pasta de configurações globais. O motor do backend está preparado para suportar a lógica das tabelas e a futura transmissão de dados via API.
+\subsubsection{Fundação do Frontend}
+O projeto base em React Native foi inicializado dentro da pasta frontend utilizando as ferramentas oficiais de criação do framework. A estrutura de arquivos gerada foi devidamente sincronizada e submetida ao repositório oficial no GitHub, que agora esta devidamente pronto para o desenvolvimento das telas e dos fluxos de navegação mobile.
+
+\subsubsection{Modelagem e Mapeamento de Dados}
+A equipe concluiu a definição do Modelo Entidade-Relacionamento, estabelecendo as tabelas fundamentais. Utilizando o sistema de ORM (Object-Relational Mapping) do Django, essas entidades foram mapeadas para o banco de dados, permitindo que as tabelas físicas sejam geridas diretamente via código Python.
+
+\subsubsection{Criação da Navegação Base e Tema Global} 
+A estrutura de rotas do frontend foi feita com a implementação do pacote React Navigation, dividindo o fluxo do aplicativo em duas frentes organizacionais. O fluxo de autenticação inicial foi estruturado através do arquivo AppNavigator.js, que atua como um navegador em pilha Stack Navigator responsável por gerenciar as transições entre as telas de login e cadastro. Ademais, a estrutura das telas internas foi feita por meio do TabNavigator.js, utilizando Bottom Tab Navigation, que é responsável por projetar o menu de abas inferiores com os direcionamentos para os módulos de principais (calendário, dashboard e disciplinas). Além disso, para assegurar um padrão estético no desenvolvimento, foi criado um arquivo theme.js, que centraliza as padronizações globais da paleta de cores, tipografia, espaçamento e arredonadamento das bordas.
+
+\subsubsection{Implementação das Telas de Autenticação}
+A criação das interfaces de acesso foi iniciada com o estabelecimento dos esqueletos da LoginScreen.js e da CadastroScreen.js na pasta de telas do projeto. Essa estrutura viabilizou a validação imediata do fluxo de rotas em pilha gerenciado pelo AppNavigator.js, evitando erros de importação no sistema.
+
+\end{document}
