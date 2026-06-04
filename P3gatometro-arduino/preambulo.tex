@@ -1,5 +1,5 @@
 \usepackage[T1]{fontenc} %pacote inicial fonte
-\usepackage[margin=1in]{geometry} % para margem principalmente, mas tambem formatar texto
+\usepackage[left=2cm, right=2cm, top=1cm, bottom=2cm, includeheadfoot, headheight=2cm]{geometry} % para margem principalmente, mas tambem formatar texto
 \usepackage{xcolor} % para cor de texto
 \usepackage{lipsum} % para texto aleatorio
 \usepackage[latin,brazilian]{babel} % para linguas entendidas pelo texto
@@ -11,10 +11,73 @@
 \usepackage{amsfonts} % para formatacao de texto matematico
 \usepackage{amssymb}
 \usepackage{url}
-\usepackage{hyperref}
 \usepackage{setspace}
 \usepackage[parfill]{parskip} % para espaçamento no texto entre paragrafos
 \usepackage{natbib} % para citacoes tambem exige que os arquivos bib sejam excluidos
 %\usepackage[style=authoryear]{biblatex} % tomar cuidado que biblatex não tem suporte para o latin e pode exigir recompilacao do bib
 \usepackage{csquotes}
 %\addbibresource{learnlatex.bib} %file of reference
+
+
+\usepackage{listingsutf8}
+\usepackage{caption}
+\usepackage[
+    colorlinks=true,       
+    linkcolor=black,       
+    urlcolor=magenta]
+{hyperref}
+
+% Define cores personalizadas para o código
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Configuração do estilo do código
+\renewcommand{\lstlistingname}{C\'odigo} % Muda "Listing" para "Código"
+\lstset{
+    language=C++,                          
+    backgroundcolor=\color{backcolour},   % Cor de fundo
+    commentstyle=\color{codegreen},       % Cor dos comentários
+    keywordstyle=\color{magenta},         % Cor das palavras-chave (void, int, if)
+    numberstyle=\tiny\color{codegray},    % Estilo dos números das linhas
+    stringstyle=\color{codepurple},       % Cor do texto entre aspas
+    basicstyle=\ttfamily\small,           % Fonte monoespaçada para o código
+    breakatwhitespace=false,              
+    breaklines=true,                      % Quebra a linha automaticamente se o código for longo
+    captionpos=b,                         % Legenda na parte inferior
+    keepspaces=true,                      % Mantém os espaços/indentação
+    numbers=left,                         % Coloca os números das linhas na esquerda
+    numbersep=5pt,                        
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    inputencoding=utf8/latin1
+}
+
+\usepackage{fancyhdr}                              		% Para uso de cabeçalhos e rodapés
+\setlength{\headheight}{70pt}
+\definecolor{light-gray}{gray}{0.30}					% Definição de cor em escala de cinza por porcentagem
+\definecolor{azulpetroleo}{RGB}{64,128,128}
+\definecolor{laranja}{RGB}{255,127,0}
+\definecolor{verde-uel}{RGB}{0,119,1}
+
+\usepackage{fancyhdr}
+\fancypagestyle{estiloCapa}{
+\renewcommand{\headrulewidth}{2pt} 						
+\renewcommand{\footrulewidth}{2pt} 						
+\renewcommand{\headrule}{{\color{black}          		
+\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}		
+\renewcommand{\footrule}{{\color{black}					
+\vskip-\footruleskip\vskip-\footrulewidth																	
+\hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
+    \fancyhf{} 
+    \lhead{\includegraphics[height=2.0cm]{./figs_template/ieeelogo1pb.jpg}\vspace{0.3cm}}
+    \chead{\textbf{\LARGE Ramo Estudantil IEEE - UEL}\vspace{1.0cm}}
+    \rhead{\includegraphics[height=2.0cm]{./figs_template/logouel.jpg}\vspace{0.3cm}}
+    \fancyfoot{}
+    \cfoot{{\small Contato do Ramo: sb.uel@ieee.org }\\{\small Institute of Electrical and Electronics Engineers - IEEE}\\{\small Universidade Estadual de Londrina - UEL $\bullet$ Paraná - Brasil}} 
+
+    
+}
