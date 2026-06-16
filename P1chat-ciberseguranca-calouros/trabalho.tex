@@ -1,28 +1,24 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[brazil]{babel}
-\usepackage{hyperref}
-
-\begin{document}
 
 %\input{secao1}
 \section{Nova seção}
 
 A primeira atividade do mês de abril, foi uma pesquisa sobre:
-• Malware — programas maliciosos criados para danificar ou espionar computadores. 
-• Ransomware — tipo de vírus que “sequestra” os arquivos e pede dinheiro para devolvê-los. 
-• Trojan (Cavalo de Troia) — programa que se disfarça de algo útil, mas esconde uma ameaça. • Phishing — golpe que tenta enganar a pessoa para roubar senhas ou dados (por e-mail ou site falso). 
-• DDoS — ataque que sobrecarrega um site com tantos acessos que ele sai do ar. 
-• Man-in-the-Middle — quando alguém intercepta a comunicação entre duas pessoas sem que elas percebam.
+\begin{itemize}
+    \item Malware --- programas maliciosos criados para danificar ou espionar computadores.
+    \item Ransomware --- tipo de vírus que ``sequestra'' os arquivos e pede dinheiro para devolvê-los.
+    \item Trojan (Cavalo de Troia) --- programa que se disfarça de algo útil, mas esconde uma ameaça.
+    \item Phishing --- golpe que tenta enganar a pessoa para roubar senhas ou dados (por e-mail ou site falso).
+    \item DDoS --- ataque que sobrecarrega um site com tantos acessos que ele sai do ar.
+    \item Man-in-the-Middle --- quando alguém intercepta a comunicação entre duas pessoas sem que elas percebam.
+\end{itemize}
 
-Cybersegurança: Vírus (Trojan)
+\subsection*{Cybersegurança: Vírus (Trojan)}
 
 Trojan é um tipo de malware que engana o usuário sobre sua verdadeira intenção. Geralmente, é espalhado por engenharia social, e-mails ou até anúncios falsos.
 
-A origem do nome “trojan” ou “trojan horse” (em português, “cavalo de Troia”) vem da própria Guerra de Troia e do cavalo feito por Odisseu. Esse tipo de malware recebe esse nome porque se passa por algo legítimo, como processos de autenticação, com o objetivo de obter senhas dos usuários. Assim, com a senha e a conta, o invasor pode se passar pela vítima.
+A origem do nome ``trojan'' ou ``trojan horse'' (em português, ``cavalo de Troia'') vem da própria Guerra de Troia e do cavalo feito por Odisseu. Esse tipo de malware recebe esse nome porque se passa por algo legítimo, como processos de autenticação, com o objetivo de obter senhas dos usuários. Assim, com a senha e a conta, o invasor pode se passar pela vítima.
 
-Hoje em dia, os métodos estão mais complexos: eles se disfarçam de programas legítimos. Contudo, em contraste com vírus e worms, não criam cópias de si mesmos — esse é o motivo de não serem considerados vírus propriamente ditos. Dessa maneira, instalam-se diretamente no computador de forma silenciosa.
+Hoje em dia, os métodos estão mais complexos: eles se disfarçam de programas legítimos. Contudo, em contraste com vírus e worms, não criam cópias de si mesmos --- esse é o motivo de não serem considerados vírus propriamente ditos. Dessa maneira, instalam-se diretamente no computador de forma silenciosa.
 
 A popularidade desse método se deve muito à sua facilidade de uso, pois qualquer pessoa pode acessar o computador de outra apenas com um arquivo. Eles também podem ter programações para realizar autodestruição após um comando ou determinado tempo.
 
@@ -30,70 +26,73 @@ As infecções podem ocorrer, normalmente, de três maneiras: Engenharia social:
 
 Geralmente, após a instalação, o trojan possui três objetivos principais: Roubar dados da vítima, como informações bancárias, senhas ou contas; Controlar remotamente o dispositivo, podendo utilizá-lo em outros ataques; Instalar outros malwares.
 
-Na maioria dos casos, é difícil perceber se você foi vítima ou não. Contudo, há alguns sinais, como: baixo desempenho da máquina (travamentos recorrentes ou até a “tela azul”); alterações na área de trabalho e barra de tarefas (resolução, cor, ícones diferentes); presença de programas desconhecidos no gerenciador de tarefas; aumento de e-mails spam, anúncios e redirecionamentos para sites suspeitos.
+Na maioria dos casos, é difícil perceber se você foi vítima ou não. Contudo, há alguns sinais, como: baixo desempenho da máquina (travamentos recorrentes ou até a ``tela azul''); alterações na área de trabalho e barra de tarefas (resolução, cor, ícones diferentes); presença de programas desconhecidos no gerenciador de tarefas; aumento de e-mails spam, anúncios e redirecionamentos para sites suspeitos.
 
 Para evitar esses problemas, é recomendável: bloquear certos tipos de anexos em e-mails (como *.EXE, *.BAT, *.CMD, *.SCR e *.JS), evitar programas suspeitos, utilizar antivírus, usar VPNs e manter aplicativos e softwares sempre atualizados.
 
 Alguns dos principais tipos:
-Backdoor: o atacante invade o computador infectado e pode fazer praticamente qualquer coisa, controlando-o remotamente. Pode enviar, receber, executar e apagar arquivos, além de reiniciar o sistema. É frequentemente usado para criar redes zumbi (botnets).
-
-Exploits: tiram proveito de vulnerabilidades em softwares ou aplicativos do computador infectado.
-
-Clampi: aguarda uma transação bancária para roubar dados da conta. É extremamente eficiente em se ocultar e burlar firewalls.
-
-Cryxos: a vítima recebe um aviso falso de infecção com um número de telefone; ao ligar, é chantageada por dinheiro ou induzida a conceder acesso à máquina.
-
-FakeAV: fingem ser antivírus. Assim como os cryxos, tentam extorquir dinheiro com ameaças falsas.
-
-IM: acessam logins de aplicativos de mensagens, como WhatsApp, podendo ser usados para extorsão, envio de malware ou até ataques DDoS.
-
-DDoS: realizam ataques distribuídos de negação de serviço, sobrecarregando um site com múltiplas solicitações, tornando-o indisponível.
-
-Mailfinder: roubam senhas de e-mail para enviar vírus aos contatos da vítima.
-
-Ransom: tornam o computador inutilizável e só restauram o acesso mediante pagamento, sendo usados em extorsões.
-
-Acesso remoto (RAT): permitem ao invasor controle total do dispositivo, possibilitando roubo de dados, espionagem e distribuição de outros malwares para formar botnets
+\begin{itemize}
+    \item Backdoor: o atacante invade o computador infectado e pode fazer praticamente qualquer coisa, controlando-o remotamente. Pode enviar, receber, executar e apagar arquivos, além de reiniciar o sistema. É frequentemente usado para criar redes zumbi (botnets).
+    \item Exploits: tiram proveito de vulnerabilidades em softwares ou aplicativos do computador infectado.
+    \item Clampi: aguarda uma transação bancária para roubar dados da conta. É extremamente eficiente em se ocultar e burlar firewalls.
+    \item Cryxos: a vítima recebe um aviso falso de infecção com um número de telefone; ao ligar, é chantageada por dinheiro ou induzida a conceder acesso à máquina.
+    \item FakeAV: fingem ser antivírus. Assim como os cryxos, tentam extorquir dinheiro com ameaças falsas.
+    \item IM: acessam logins de aplicativos de mensagens, como WhatsApp, podendo ser usados para extorsão, envio de malware ou até ataques DDoS.
+    \item DDoS: realizam ataques distribuídos de negação de serviço, sobrecarregando um site com múltiplas solicitações, tornando-o indisponível.
+    \item Mailfinder: roubam senhas de e-mail para enviar vírus aos contatos da vítima.
+    \item Ransom: tornam o computador inutilizável e só restauram o acesso mediante pagamento, sendo usados em extorsões.
+    \item Acesso remoto (RAT): permitem ao invasor controle total do dispositivo, possibilitando roubo de dados, espionagem e distribuição de outros malwares para formar botnets.
+\end{itemize}
 
 Referências:
-https://www.eset.com/br/blog/cultura/o-que-e-um-trojan-como-funciona-e-como-se-proteger/?srsltid=AfmBOooHcTIms6fcVJ5GxbLAmtbFDxJ3I9ITCs7zlUiFmh9vlXsUFgdB
-https://pt.wikipedia.org/wiki/Cavalo_de_troia_(computação)
-https://www.kaspersky.com.br/resource-center/threats/trojans
-
-
+\begin{itemize}
+    \item \url{https://www.eset.com/br/blog/cultura/o-que-e-um-trojan-como-funciona-e-como-se-proteger/}
+    \item \url{https://pt.wikipedia.org/wiki/Cavalo_de_troia_(computação)}
+    \item \url{https://www.kaspersky.com.br/resource-center/threats/trojans}
+\end{itemize}
 
 A segunda pesquisa do mês de abril foi:
-Entender o básico de como a internet funciona: 
-• Como dados viajam de um computador a outro de forma simplificada. 
-• O que é um endereço IP (o “endereço” do computador na rede). 
-• O que é uma porta (como “portas de entrada” para diferentes serviços). 
-• O que é cliente-servidor (um computador pede, o outro responde).
+Entender o básico de como a internet funciona:
+\begin{itemize}
+    \item Como dados viajam de um computador a outro de forma simplificada.
+    \item O que é um endereço IP (o ``endereço'' do computador na rede).
+    \item O que é uma porta (como ``portas de entrada'' para diferentes serviços).
+    \item O que é cliente-servidor (um computador pede, o outro responde).
+\end{itemize}
 
-• Migração de Dados: 
-A viajem de Dados ocorre por meio de redes físicas (cabos) ou sem fio (wi-fi), possuindo diversas maneiras de se transferir, convertendo informações de uma máquina para outra em sinais elétricos, luz ou rádio, sendo transmitidos e recebidos em pacotes. Esses pacotes podem seguir caminhos diferentes pela internet para evitar congestionamentos e, ao chegar ao destino são organizados novamente na ordem correta. Isso pode ser feita de forma que se conecte a mais do que dois computadores podendo conectar cada um em um certo computador, porém é uma forma muito complicada, por isso é utilizado um roteador que pode conectar a outros roteadores para transmitir esses dados de uma forma que necessite menos cabos, podendo se escalar a uma fonte infinita de computadores, sendo uma forma mais facilitada o uso de um provedor de serviços de internet(ISP) feito especificamente para isso, facilitando ainda mais a conexão.
+\subsection*{Migração de Dados}
 
-• IPs (Internet Protocol): 
-O endereço IP é usado para identificar um computador para a recepção ou o envio de dados de um dispositivo específico, possuindo geralmente um formato composto em série de 4 números separados por pontos, por exemplo: 192.123.5.29. Sendo uma forma eficiente para computadores, porém para humanos, não possui essa vantagem, por isso IPs podem ser apelidados, conhecidos como nome de domínio, por exemplo google.com, facilitando a sua compreensão, assim como ajuda na sua localização visto que endereços IPs mudam toda hora. IPs também possuem diferenças quanto ao IP público e privado, sendo o público o endereço do roteador na internet, já a privado é o endereço da sua própria máquina. Os IPs também possuem tipos diferentes de formatos como o: IPV4(Protocal Version 4): Usa endereços de 32 bits (123.456.7.89) IPV6(Protocal Version 6): Usa endereços de 128 bits (alfanuméricos, 1234 : db7 : f f00 : 32 : 8764) Esses tipos possuem diferenças quanto sua capacidade, formato, segurança (IPsec embutido em IPV6 e opcional em IPV4), configuração (IPV6 possui autoconfiguração automática) e cabeçalho (IPV6 mais simples).
+A viagem de dados ocorre por meio de redes físicas (cabos) ou sem fio (wi-fi), possuindo diversas maneiras de se transferir, convertendo informações de uma máquina para outra em sinais elétricos, luz ou rádio, sendo transmitidos e recebidos em pacotes. Esses pacotes podem seguir caminhos diferentes pela internet para evitar congestionamentos e, ao chegar ao destino, são organizados novamente na ordem correta. Isso pode ser feito de forma que se conecte a mais do que dois computadores, podendo conectar cada um em um certo computador, porém é uma forma muito complicada, por isso é utilizado um roteador que pode conectar a outros roteadores para transmitir esses dados de uma forma que necessite menos cabos, podendo se escalar a uma fonte infinita de computadores, sendo uma forma mais facilitada o uso de um provedor de serviços de internet (ISP) feito especificamente para isso, facilitando ainda mais a conexão.
 
-• Portas de Entrada (Portas de Protocolos de Rede):
-Portas de Redes são um meio para que um serviço funcione, direcionando aplicações e serviços para um destino receber dados de uma forma simplificada, cada porta de entrada possui grupos diferentes como por exemplo a porta 80/443 é usada para tráfego de web (navegador) e a portar 22 usada pra conexão segura (SSH). Cada porta possui 16 bits, existem 65534 portas possíveis que cada servidor pode usar, tendo outros protocolos usados por meio de uma autoridade de atribuição de números da internet (IANA), possuindo cada porta um tipo de serviço para que não haja conflitos ou imprevistos na internet como:  53 = DNS 67,68 = DHCP 80 = HP 110 = POP3 443 = HTTPS O TCP e UDP são os protocolos mais básicos da comunicação de computadores TCP: Apresenta latência na transferência de dados, porém garantem a entrega dos dados UDP: Transmite grandes quantidades de dados, porém não garantem a entrega dos dados Ambos os protocolos necessitam de endereço IP e portas para funcionar, devido terem comportamentos é recomendado utilizar o (IANA), tendo algumas portas que somente funcionam com TCP ou UDP, assim como TCP e UDP. 
+\subsection*{IPs (Internet Protocol)}
 
-• Cliente Servidor: 
-Cliente Servidor é modelo de rede baseado em requisições e respostas, os clientes fazem as requisições de acesso aos serviços ou recursos e os servidores fornece o serviço ou o recurso designado na rede, sendo necessário uma rede que permite a conexão entre os clientes e servidores. 
+O endereço IP é usado para identificar um computador para a recepção ou o envio de dados de um dispositivo específico, possuindo geralmente um formato composto em série de 4 números separados por pontos, por exemplo: 192.123.5.29. Sendo uma forma eficiente para computadores, porém para humanos não possui essa vantagem, por isso IPs podem ser apelidados, conhecidos como nome de domínio, por exemplo google.com, facilitando a sua compreensão, assim como ajuda na sua localização visto que endereços IPs mudam toda hora. IPs também possuem diferenças quanto ao IP público e privado, sendo o público o endereço do roteador na internet, já o privado é o endereço da sua própria máquina. Os IPs também possuem tipos diferentes de formatos como o: IPv4 (Protocol Version 4): usa endereços de 32 bits (123.456.7.89); IPv6 (Protocol Version 6): usa endereços de 128 bits (alfanuméricos, 1234:db7:ff00:32:8764). Esses tipos possuem diferenças quanto a sua capacidade, formato, segurança (IPsec embutido em IPv6 e opcional em IPv4), configuração (IPv6 possui autoconfiguração automática) e cabeçalho (IPv6 mais simples).
+
+\subsection*{Portas de Entrada (Portas de Protocolos de Rede)}
+
+Portas de redes são um meio para que um serviço funcione, direcionando aplicações e serviços para um destino receber dados de uma forma simplificada. Cada porta de entrada possui grupos diferentes, como por exemplo a porta 80/443 é usada para tráfego de web (navegador) e a porta 22 usada para conexão segura (SSH). Cada porta possui 16 bits, existem 65534 portas possíveis que cada servidor pode usar, tendo outros protocolos usados por meio de uma autoridade de atribuição de números da internet (IANA), possuindo cada porta um tipo de serviço para que não haja conflitos ou imprevistos na internet, como: 53 = DNS; 67, 68 = DHCP; 80 = HTTP; 110 = POP3; 443 = HTTPS. O TCP e UDP são os protocolos mais básicos da comunicação de computadores. TCP: apresenta latência na transferência de dados, porém garante a entrega dos dados. UDP: transmite grandes quantidades de dados, porém não garante a entrega dos dados. Ambos os protocolos necessitam de endereço IP e portas para funcionar, e devido aos seus comportamentos é recomendado utilizar o IANA, tendo algumas portas que somente funcionam com TCP ou UDP, assim como TCP e UDP.
+
+\subsection*{Cliente-Servidor}
+
+Cliente-servidor é um modelo de rede baseado em requisições e respostas: os clientes fazem as requisições de acesso aos serviços ou recursos e os servidores fornecem o serviço ou o recurso designado na rede, sendo necessária uma rede que permita a conexão entre os clientes e servidores.
 
 Referências:
-Como a Internet funciona? - Aprendendo desenvolvimento web | MDN
-https://www.youtube.com/watch?v=W-_jjmkUH9k https://www.youtube.com/watch?v=MWYZj6SJ9j
-https://www.youtube.com/watch?v=jWo792sVGBY&t=85s https://www.youtube.com/watch?v=FaTlrHq8RKM 
-https://www.youtube.com/watch?v=Xmu-EpxcROM&t=147s
+\begin{itemize}
+    \item Como a Internet funciona? --- Aprendendo desenvolvimento web | MDN
+    \item \url{https://www.youtube.com/watch?v=W-_jjmkUH9k}
+    \item \url{https://www.youtube.com/watch?v=jWo792sVGBY&t=85s}
+    \item \url{https://www.youtube.com/watch?v=FaTlrHq8RKM}
+    \item \url{https://www.youtube.com/watch?v=Xmu-EpxcROM&t=147s}
+\end{itemize}
 
+A terceira atividade do mês de abril foi algumas revisões sobre Python.
 
-A terceira atividade do mês de abril, foi algumas revisões sobre python
+Faça um programa que receba o raio $r$, e exiba o comprimento da circunferência $C$, a área do círculo $A_c$, a área superficial da esfera $A_s$ e o volume da esfera $V$.
+\[
+C = 2\pi r \qquad A_c = \pi r^2 \qquad V = \frac{4}{3}\pi r^3 \qquad A_s = 4\pi r^2
+\]
 
-Faça um programa que receba o raio r, e exiba o comprimento da circunferência C, a área do círculo Ac, a área superficial da esfera As e o volume da esfera V.
-
-C = 2πr			Ac = πr2 		V=(4/3)* πr3		As = 4πr2
-
+\begin{verbatim}
 raio = float(input('informe seu raio\n'))
 pi = 3.1415
 c = 2*pi*raio
@@ -101,25 +100,31 @@ v = (4/3)*pi*raio**3
 ac = pi*raio**2
 ass = 4*pi*raio**2
 print(f"comprimeto: {c}\nvolume: {v}\narea do circulo: {ac}\narea superficial: {ass}")
+\end{verbatim}
 
-Na primeira semana de Maio, a atividade foi:
-Configurar o ambiente de desenvolvimento: 
-• Instalar o Python 3 (se necessário) e o VS Code com a extensão Python. 
-• Criar um ambiente virtual (venv): Uma “caixa isolada” que guarda as bibliotecas do projeto sem afetar o resto do computador: – Criar: python -m venv venv – Ativar (Linux/Mac): source venv/bin/activate – Ativar (Windows): venv\Scripts\activate 
-• Entender o pip (gerenciador de pacotes) e criar um requirements.txt
+Na primeira semana de maio, a atividade foi configurar o ambiente de desenvolvimento:
+\begin{itemize}
+    \item Instalar o Python 3 (se necessário) e o VS Code com a extensão Python.
+    \item Criar um ambiente virtual (venv): uma ``caixa isolada'' que guarda as bibliotecas do projeto sem afetar o resto do computador:
+    \begin{itemize}
+        \item Criar: \verb|python -m venv venv|
+        \item Ativar (Linux/Mac): \verb|source venv/bin/activate|
+        \item Ativar (Windows): \verb|venv\Scripts\activate|
+    \end{itemize}
+    \item Entender o pip (gerenciador de pacotes) e criar um \verb|requirements.txt|.
+\end{itemize}
 
-Nessa atividade, eu instalei uma venv no VsCode, com a versão 3.14.4 do python. Aprendi também que para ativar o meu ambiente virtual eu utilizo o comando: .\venv\Scripts\activate, e para desativar ultiliza-se o comando: deactivate.
-
-\section{teste}
-texto texto texto texto
+Nessa atividade, eu instalei uma venv no VS Code, com a versão 3.14.4 do Python. Aprendi também que para ativar o meu ambiente virtual eu utilizo o comando \verb|.\venv\Scripts\activate|, e para desativar utiliza-se o comando \verb|deactivate|.
 
 
 %\input{secao2}
+\section{Relatório do mês de maio}
 
-Relatório mês de maio:
+Neste mês fizemos os primeiros testes com a biblioteca \verb|socket|, e já começamos a estruturar o chat com o modelo cliente e servidor.
 
-Neste mês fizemos os primeiros testes com a biblioteca socket, e já começamos a estruturar o chat com o modelo cliente e servidor.
-Parte do cliente:
+\subsection*{Parte do cliente}
+
+\begin{verbatim}
 import socket
 
 HEADER = 64
@@ -140,20 +145,22 @@ def send(msg):
     client.send(send_length)
     client.send(message)
     print(client.recv(2048).decode(FORMAT))
-    
+
 connected = True
 
 while connected:
     msg = input()
     send(msg)
-    
+
     if msg == DISCONNECT_MESSAGE:
         connected = False
-    
+
 client.close()
+\end{verbatim}
 
+\subsection*{Parte do servidor}
 
-E também do servidor:
+\begin{verbatim}
 import socket
 import threading
 
@@ -169,7 +176,7 @@ server.bind(ADDR)
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
-    
+
     connected = True
     while connected:
         msg_length = conn.recv(HEADER).decode(FORMAT)
@@ -178,12 +185,12 @@ def handle_client(conn, addr):
             msg = conn.recv(msg_length).decode(FORMAT)
             if msg == DISCONNECT_MESSAGE:
                 connected = False
-                
+
             print(f"[{addr}] {msg}")
             conn.send("Message received".encode(FORMAT))
-        
+
     conn.close()
-    
+
 def start():
     server.listen()
     print(f"[LISTENING] Server is listening on {SERVER}")
@@ -195,194 +202,64 @@ def start():
 
 print("[STARTING] server is starting...")
 start()
+\end{verbatim}
 
-Aqui há um breve resumo explicando o que cada parte do código faz:
-# Explicação do Código
-Este código implementa um servidor TCP concorrente utilizando as bibliotecas `socket` e `threading`.
-O objetivo do programa é permitir que vários clientes se conectem simultaneamente, criando uma thread para cada conexão.
+\subsection*{Explicação do código}
 
-#  bibliotecas usadas
-import socket
-Importa a biblioteca responsável pela comunicação em rede.
-Ela permite:
-- criar servidores
-- criar clientes
-- enviar mensagens
-- receber mensagens
-import threading
-Importa a biblioteca responsável por criar **Threads**.
-Threads permitem executar várias tarefas ao mesmo tempo.
-No projeto do chat:
-- 1 cliente → 1 thread
-- vários clientes → várias threads
+Este código implementa um servidor TCP concorrente utilizando as bibliotecas \verb|socket| e \verb|threading|. O objetivo do programa é permitir que vários clientes se conectem simultaneamente, criando uma thread para cada conexão.
 
-# Configurações iniciais
-HEADER = 64
-Define que os primeiros **64 bytes** enviados conterão o tamanho da mensagem.
-Exemplo:
-Mensagem: Olá
-Tamanho: 3
-PORT = 5050
-Define a porta utilizada pelo servidor.
-SERVER = socket.gethostbyname(socket.gethostname())
-Obtém automaticamente o endereço IP da máquina.
-Exemplo: ```text 192.168.1.10
-ADDR = (SERVER, PORT)
-Agrupa IP e porta.
-Exemplo: ```text ("192.168.1.10",5050)
-FORMAT = 'utf-8'
-Define a codificação(alfabeto) utilizada.
-Converte: Texto ↔ Bytes
-DISCONNECT_MESSAGE = "!DISCONNECT"
-Mensagem utilizada para encerrar a conexão.
+\textbf{Bibliotecas usadas:}
+\begin{itemize}
+    \item \verb|import socket| --- biblioteca responsável pela comunicação em rede. Permite criar servidores, criar clientes, enviar e receber mensagens.
+    \item \verb|import threading| --- biblioteca responsável por criar \emph{threads}, que permitem executar várias tarefas ao mesmo tempo. No projeto do chat: 1 cliente corresponde a 1 thread, e vários clientes a várias threads.
+\end{itemize}
 
-# Criação do servidor
-server = socket.socket(
-    socket.AF_INET,
-    socket.SOCK_STREAM
-)
-Cria um socket TCP.
-Parâmetros:
-- `AF_INET` → IPv4
-- `SOCK_STREAM` → TCP
-TCP garante:
-- ordem
-- entrega
-- confiabilidade
-server.bind(ADDR)
-Associa o servidor ao endereço.
-Equivale a:
-Servidor escutando:
-IP + Porta
+\textbf{Configurações iniciais:}
+\begin{itemize}
+    \item \verb|HEADER = 64| --- define que os primeiros 64 bytes enviados conterão o tamanho da mensagem (ex.: mensagem ``Olá'' tem tamanho 3).
+    \item \verb|PORT = 5050| --- porta utilizada pelo servidor.
+    \item \verb|SERVER = socket.gethostbyname(socket.gethostname())| --- obtém automaticamente o endereço IP da máquina (ex.: 192.168.1.10).
+    \item \verb|ADDR = (SERVER, PORT)| --- agrupa IP e porta (ex.: ("192.168.1.10", 5050)).
+    \item \verb|FORMAT = 'utf-8'| --- define a codificação utilizada, convertendo texto em bytes.
+    \item \verb|DISCONNECT_MESSAGE = "!DISCONNECT"| --- mensagem utilizada para encerrar a conexão.
+\end{itemize}
 
-# Função handle_client()
-def handle_client(conn, addr):
-Função executada por cada thread.
-Parâmetros:
-- `conn` → conexão com cliente
-- `addr` → endereço do cliente
-Cada cliente conectado executa uma instância dessa função.
-print(f"[NEW CONNECTION] {addr} connected.")
-Mostra no terminal quando alguém conecta.
-Exemplo: ```text [NEW CONNECTION] ('192.168.1.20',5050)
-connected = True
-Controla o loop da conexão.
-while connected:
-Mantém comunicação ativa.
-msg_length = conn.recv(HEADER)
-.decode(FORMAT)
-Recebe os primeiros 64 bytes.
-Esses bytes indicam o tamanho da mensagem.
-if msg_length:
-Verifica se recebeu algo.
-msg_length = int(msg_length)
-Converte para número.
-Exemplo: ```text "12" -> 12
-msg = conn.recv(msg_length)
-.decode(FORMAT)
-Recebe a mensagem real.
-Exemplo: ```text "Olá servidor"
-if msg == DISCONNECT_MESSAGE:
-Verifica se cliente pediu desconexão.
-connected = False
-Encerra comunicação.
-print(f"[{addr}] {msg}")
-Exibe mensagem recebida.
-Exemplo: ```text [192.168.1.20] Olá
-conn.send( "Message received" .encode(FORMAT))
-Envia confirmação ao cliente.
-conn.close()
-Fecha conexão.
+\textbf{Criação do servidor:} \verb|socket.socket(AF_INET, SOCK_STREAM)| cria um socket TCP, em que \verb|AF_INET| indica IPv4 e \verb|SOCK_STREAM| indica TCP. O TCP garante ordem, entrega e confiabilidade. Em seguida, \verb|server.bind(ADDR)| associa o servidor ao endereço (IP + porta).
 
-# Função start()
-def start():
-Responsável por iniciar o servidor.
-server.listen()
-Coloca servidor em modo de espera.
-print(f"[LISTENING] Server is listening on {SERVER}")
-Mostra que o servidor iniciou.
-while True:
-Mantém servidor funcionando continuamente.
-conn, addr =
-server.accept()
-Espera um cliente conectar.
-Retorna:
-- conexão
-- endereço
+\textbf{Função handle\_client():} executada por cada thread, recebe \verb|conn| (conexão com o cliente) e \verb|addr| (endereço do cliente). Cada cliente conectado executa uma instância dessa função. O loop \verb|while connected| mantém a comunicação ativa: recebe os primeiros 64 bytes que indicam o tamanho da mensagem, converte para número, recebe a mensagem real e a exibe. Se a mensagem for \verb|!DISCONNECT|, encerra a comunicação. A cada mensagem o servidor envia a confirmação ``Message received'' e, ao final, fecha a conexão com \verb|conn.close()|.
 
-# Uso do Threading
-thread =
-threading.Thread(target=handle_client,args=(conn, addr))
-Cria uma thread.
-Parâmetros:
-- `target` → função executada
-- `args`
-→ argumentos enviados
-Equivale a:
-handle_client(conn, addr)
-thread.start()
-Inicia a thread.
-Agora o cliente é atendido em paralelo.
-print(threading.active_count()- 1)
-Conta quantas threads estão ativas.
-Subtrai 1 para ignorar a thread principal.
-Exemplo:
-```text
-3 clientes conectados
----
+\textbf{Função start():} responsável por iniciar o servidor. \verb|server.listen()| coloca o servidor em modo de espera e o loop \verb|while True| o mantém funcionando continuamente. \verb|server.accept()| espera um cliente conectar e retorna a conexão e o endereço.
 
-# Inicialização
-print("[STARTING]server is starting...")
-Mostra início.
-start()
-Executa o servidor.
+\textbf{Uso do threading:} para cada conexão, \verb|threading.Thread(target=handle_client, args=(conn, addr))| cria uma thread, em que \verb|target| é a função executada e \verb|args| são os argumentos enviados (equivale a \verb|handle_client(conn, addr)|). \verb|thread.start()| inicia a thread, atendendo o cliente em paralelo. \verb|threading.active_count() - 1| conta quantas threads estão ativas, subtraindo 1 para ignorar a thread principal.
 
-# Fluxo Geral
-```text
+\textbf{Fluxo geral:}
+\begin{verbatim}
 Servidor inicia
-↓
-listen()
-↓
-Cliente conecta
-↓
-accept()
-↓
-Cria thread
-↓
-start()
-↓
-handle_client()
-↓
-Recebe mensagens
-↓
-Responde
-↓
-Cliente desconecta
-↓
-Fecha conexão
-```
-Este código implementa um servidor concorrente usando Python, Socket e Threading.
+  -> listen()
+  -> Cliente conecta
+  -> accept()
+  -> Cria thread
+  -> start()
+  -> handle_client()
+  -> Recebe mensagens
+  -> Responde
+  -> Cliente desconecta
+  -> Fecha conexão
+\end{verbatim}
 
+Este código implementa, portanto, um servidor concorrente usando Python, Socket e Threading.
 
-E aqui é um resumo sobre uma das bibliotecas utilizadas, threarding:
-A biblioteca threading do Python funciona como um substituto a ideia original de projeto que seria um a criação de um servidor central.
-Essa biblioteca permite a execução de múltiplas tarefas simultaneamente dentro do mesmo programa por meio de threads (linhas de execução). 
-Ela é muito utilizada em aplicações que precisam realizar várias operações ao mesmo tempo, como servidores, comunicação em rede, leitura de arquivos e espera por entrada do usuário.
-No código, o threading foi usado para permitir que o servidor atendesse vários clientes ao mesmo tempo.
-Sempre que um cliente se conecta, o servidor cria uma nova thread responsável por tratar exclusivamente aquela conexão.
+\subsection*{A biblioteca threading}
+
+A biblioteca \verb|threading| do Python funciona como um substituto à ideia original de projeto, que seria a criação de um servidor central. Essa biblioteca permite a execução de múltiplas tarefas simultaneamente dentro do mesmo programa por meio de threads (linhas de execução). Ela é muito utilizada em aplicações que precisam realizar várias operações ao mesmo tempo, como servidores, comunicação em rede, leitura de arquivos e espera por entrada do usuário.
+
+No código, o threading foi usado para permitir que o servidor atendesse vários clientes ao mesmo tempo. Sempre que um cliente se conecta, o servidor cria uma nova thread responsável por tratar exclusivamente aquela conexão.
+
 Principais funções utilizadas no código:
-	•	threading.Thread() → Cria uma nova thread.
-Exemplo: 
-thread = thrending.Thread(target=handle_client, args=(conn, addr))
-	•	target → Define qual função será executada pela thread. Exemplo: target=handle_client
-	•	Faz com que a thread execute a função handle_client().
-	•	args → Envia argumentos para a função executada pela thread. Exemplo: args=(conn, addr)
-	•	    Equivale a executar: handle_client(conn, addr) 
-	•	start() → Inicia a execução da thread. Exemplo: thread.start()
-	•	Sem essa função, a thread é criada mas não executa.
-	•	threading.active_count() → Retorna o número de threads ativas no programa.Exemplo: threading.active_count() - 1
-	•	O -1 é usado para desconsiderar a thread principal e mostrar apenas as conexões dos clientes.
-
-
-
-\end{document}
+\begin{itemize}
+    \item \verb|threading.Thread()| --- cria uma nova thread. Exemplo: \verb|thread = threading.Thread(target=handle_client, args=(conn, addr))|.
+    \item \verb|target| --- define qual função será executada pela thread (ex.: \verb|target=handle_client| faz a thread executar \verb|handle_client()|).
+    \item \verb|args| --- envia argumentos para a função executada pela thread (ex.: \verb|args=(conn, addr)| equivale a executar \verb|handle_client(conn, addr)|).
+    \item \verb|start()| --- inicia a execução da thread (ex.: \verb|thread.start()|). Sem essa função, a thread é criada mas não executa.
+    \item \verb|threading.active_count()| --- retorna o número de threads ativas no programa (ex.: \verb|threading.active_count() - 1|). O \verb|-1| desconsidera a thread principal e mostra apenas as conexões dos clientes.
+\end{itemize}
