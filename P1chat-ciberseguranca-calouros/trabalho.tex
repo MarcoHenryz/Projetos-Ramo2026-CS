@@ -263,3 +263,169 @@ Principais funções utilizadas no código:
     \item \verb|start()| --- inicia a execução da thread (ex.: \verb|thread.start()|). Sem essa função, a thread é criada mas não executa.
     \item \verb|threading.active_count()| --- retorna o número de threads ativas no programa (ex.: \verb|threading.active_count() - 1|). O \verb|-1| desconsidera a thread principal e mostra apenas as conexões dos clientes.
 \end{itemize}
+
+\section{Relatório do mês de junho}
+
+Nesse mês foram feitas algumas alterações no chat.
+
+\subsection*{Nova versão do cliente}
+
+\begin{verbatim}
+import socket
+import threading
+import time
+
+nickname = input("Choose a nickname: ")
+
+HEADER = 64
+PORT = 5050
+FORMAT = 'utf-8'
+DISCONNECT_MESSAGE = "!DISCONNECT"
+SERVER = "191.52.106.190"
+ADDR = (SERVER, PORT)
+
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(ADDR)
+
+def receive():
+    while True:
+        try:
+            message = client.recv(1024).decode(FORMAT)
+            if message == 'NICK':
+                client.send(nickname.encode(FORMAT))
+                pass
+            else:
+                print(message)
+        except:
+            print("An error occurred")
+            client.close()
+            break
+
+def send():
+    connected = True
+
+    while connected:
+        
+        time.sleep(0.8)
+        user_input = input("> ")
+        
+        if user_input == DISCONNECT_MESSAGE:
+            print("Disconnecting from the server...")
+            connected = False
+            msg = DISCONNECT_MESSAGE
+            message = msg.encode(FORMAT)
+            msg_length = str(len(message)).encode(FORMAT)
+            msg_length += b' ' * (HEADER - len(msg_length))
+            client.send(msg_length)
+            client.send(message)
+            time.sleep(1)
+
+            client.close()
+            break
+        
+        else:
+            msg = f"{nickname}: {user_input}"
+            message = msg.encode(FORMAT)
+            msg_length = str(len(message)).encode(FORMAT)
+            msg_length += b' ' * (HEADER - len(msg_length))
+            client.send(msg_length)
+            client.send(message)
+ 
+
+receive_thread = threading.Thread(target=receive)
+receive_thread.start()
+
+send_thread = threading.Thread(target=send)
+send_thread.start()
+\end{verbatim}
+
+\subsection*{Nova versão do servidor}
+
+\begin{verbatim}
+import socket
+import threading
+
+HEADER = 64
+PORT = 5050
+SERVER = "0.0.0.0"
+ADDR = (SERVER, PORT)
+FORMAT = "utf-8"
+DISCONNECT_MESSAGE = "!DISCONNECT"
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind(ADDR)
+server.listen()
+
+clients = []
+nicknames = []
+
+def remove_client(client):
+    index = clients.index(client)
+    client.close()
+    print(clients)
+    nickname = nicknames[index]
+    clients.remove(client)
+    print(f"{nickname} desconectou do chat")
+    broadcast(f"{nickname} left the chat".encode(FORMAT))
+    nicknames.remove(nickname)
+
+def broadcast(message):
+    for client in clients:
+        client.send(message)
+
+def handle_client(client, addr):
+    connected = True
+    while connected:
+        try:
+            msg_length = client.recv(HEADER).decode(FORMAT)
+            if msg_length:
+                msg_length = int(msg_length)
+                msg = client.recv(msg_length).decode(FORMAT)
+                if msg == DISCONNECT_MESSAGE:
+                    remove_client(client)
+                    break
+                broadcast(msg.encode(FORMAT))
+
+        except:
+            remove_client(client)
+            break
+    client.close()
+
+def receive():
+    while True:
+        client, addr = server.accept()
+        print(f"Connected with {str(addr)}")
+
+        client.send("NICK".encode(FORMAT))
+        nickname = client.recv(1024).decode(FORMAT)
+        nicknames.append(nickname)
+        clients.append(client)
+
+        print(f"Nickname of client is {nickname}")
+        broadcast(f"{nickname} joined the chat".encode(FORMAT))
+        client.send("Connected to the server".encode(FORMAT))
+
+        thread = threading.Thread(target=handle_client, args=(client, addr))
+        thread.start() 
+
+print("[STARTING] server is listening...")
+receive()
+\end{verbatim}
+
+As principais atualizações feitas são:
+
+\begin{itemize}
+    \item \textbf{Na parte do cliente:} Ao iniciar o código, o programa solicita que o usuário informe seu nome (nickname), que será utilizado para identificá-lo no chat. O cliente passou a enviar e receber mensagens simultaneamente por meio de duas threads: uma responsável pelo envio e outra pelo recebimento das mensagens. Além disso, ele passa a receber mensagens enviadas por qualquer cliente conectado ao servidor, permitindo uma comunicação em grupo.
+
+    \item \textbf{Na parte do servidor:} O servidor passou a manter uma lista dos clientes conectados e seus respectivos nicknames, permitindo identificar o remetente de cada mensagem. Quando um novo cliente entra no chat, todos os participantes recebem uma mensagem informando sua conexão; da mesma forma, quando um cliente se desconecta, todos são notificados. Outra mudança importante é a utilização do endereço \verb|0.0.0.0|, permitindo que o servidor aceite conexões por qualquer interface de rede.
+\end{itemize}
+
+Novas funções:
+
+\begin{itemize}
+    \item \verb|receive()|: executada em uma thread separada, fica constantemente aguardando e exibindo as mensagens recebidas do servidor, permitindo que o usuário continue digitando enquanto recebe novas mensagens.
+
+    \item \verb|broadcast()|: envia uma mesma mensagem para todos os clientes conectados ao servidor, tornando possível o funcionamento do chat em grupo.
+
+    \item \verb|remove_client()|: identifica o cliente que se desconectou, fecha sua conexão, remove-o das listas de clientes e nicknames e informa aos demais participantes que ele saiu do chat.
+\end{itemize}
