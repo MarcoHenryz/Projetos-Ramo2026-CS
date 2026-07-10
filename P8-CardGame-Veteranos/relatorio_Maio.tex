@@ -1,0 +1,33 @@
+\section{Relatório de Maio}
+
+\subsection{Propostas para o Mês:}
+\begin{enumerate}
+    \item Criar as principais regras e mecânicas para o jogo, incluindo:
+    \begin{itemize}
+        \item Condição de vitória;
+        \item Atributos e comportamentos de cada carta e como elas se relacionam com o tabuleiro;
+        \item Ações disponíveis para o jogador, que dão andamento para a partida.
+    \end{itemize}
+    \item Definir a temática, tanto na arte das cartas quanto no \textit{layout} do jogo. 
+    \item Estabelecer qual engine/linguagem será usada para o projeto.
+\end{enumerate}
+
+\subsection{Atividades realizadas:}
+
+\subsubsection{Definição das regras principais}
+
+Após reuniões e estudos à respeito do sistema de regras, as mecânicas básicas foram definidas entre os membros. Como visto anteriormente, a ideia é ser um jogo de cartas inspirado nos card games clássicos. Então, a condição de vitória estabelecida é simples: cada jogador terá um total de pontos de vida e o objetivo é reduzir os pontos do oponente para zero, assim ganhando a partida. 
+
+Com relação às cartas, cada uma terá atributos e arte única. Essas cartas representam criaturas, tendo pontos de ataque, vida e custo. O ataque representa a quantidade de dano causado nos pontos de vida de uma outra carta ou de um jogador. Já a vida representa a saúde da criatura, que caso seja reduzido à zero, a carta é retirada de campo. Por fim, o custo diz respeito ao "sacríficio" para colocá-la no campo, ou seja, quanto mais forte a carta mais custosa ela será. Essas mecânicas são essenciais para manter o equilíbrio e dar mais personalidade ao jogo, e estão sujeitas a mudanças futuras.
+
+O tabuleiro do jogo é outro elemento fundamental, sendo o local onde as cartas serão posicionadas. Cada jogador terá um campo no tabuleiro com um número fixo de espaços, no qual apenas uma carta pode ser posicionada nesse espaço por vez. Com o decorrer do projeto, outros espaços no campo podem ser criados para suprir necessidades extras ou para complementar o jogo com mais mecânicas e regras interessantes. 
+
+Com relação às ações do jogador, no seu turno ele poderá posicionar um número limitado de cartas. Ao final do turno, essas cartas de criatura atacam a posição no tabuleiro à sua frente, causando dano nas cartas inimigas ou diretamente nos pontos de vida do oponente, caso o campo esteja vazio.
+
+\subsubsection{Definição da temática}
+Como inicialmente toda carta será uma criatura, esse tema foi deixado em aberto para os designers. Assim, cada um poderá criar sua própria arte para as cartas, baseando-se em seus gostos pessoais e estilo de traço. Além disso, seria interessante para definir um "arquétipo" de baralho (como um baralho só de cartas de animais, outro apenas de heróis, etc.).
+
+\subsubsection{Escolha da engine/linguagem}
+Para a programação, a linguagem escolhida foi C usando a API Raylib. Essa biblioteca de código aberto traz ferramentas interessantes para o desenvolvimento de jogos em C, assim tornando possível focar na parte pura de programação sem a necessidade de mexer com interfaces complexas, como acontece em outras engines. 
+
+Para as próximas metas, como definido, será compreender a ferramenta para iniciar o projeto. Enquanto isso, a modelagem do programa poderá ser iniciada, usando o conhecimento de engenharia de software para estruturar os próximos passos e guiar a programação do jogo, mantendo a organização.

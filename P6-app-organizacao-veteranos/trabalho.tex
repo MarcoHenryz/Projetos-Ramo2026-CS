@@ -38,4 +38,55 @@ A estrutura de rotas do frontend foi feita com a implementação do pacote React
 \subsubsection{Implementação das Telas de Autenticação}
 A criação das interfaces de acesso foi iniciada com o estabelecimento dos esqueletos da LoginScreen.js e da CadastroScreen.js na pasta de telas do projeto. Essa estrutura viabilizou a validação imediata do fluxo de rotas em pilha gerenciado pelo AppNavigator.js, evitando erros de importação no sistema.
 
+
+\section{Metas e Atividades Realizadas de Junho}
+
+\subsection{Observações do mês:}
+Devido à grande quantidade de trabalhos e provas no mês de junho, a equipe teve disponibilidade reduzida para dedicação ao projeto. Porém, graças ao adiantamento realizado anteriormente, os módulos de Faltas e Calendário já se encontram parcialmente estruturados no backend, conforme detalhado a seguir.
+
+\subsection{Objetivos propostos para o mês:}
+\begin{enumerate}
+    \item \textbf{Frequência:} Desenvolvimento dos algoritmos de cálculo de presença e alertas de limite de faltas na interface.
+    \item \textbf{Cronograma Dinâmico:} Criação dos modelos de eventos, provas e trabalhos no backend e desenvolvimento da visualização de calendário no mobile.
+\end{enumerate}
+
+\subsection{Atividades realizadas no mês:}
+
+\subsubsection{Backend}
+Como adiantamento realizado ainda em maio, o backend dos módulos de Faltas e Calendário já está bem estruturado: as entidades falta, avaliacao, tarefa e notificacao foram totalmente mapeadas via ORM do Django, com seus respectivos relacionamentos de chave estrangeira com a disciplina, controle de unicidade para evitar lançamentos duplicados de faltas, cálculo de peso para médias ponderadas e vinculação de notificações a tarefas ou avaliações.
+
+\begin{verbatim}
+    
+class Falta(models.Model):
+    id_falta = models.AutoField(primary_key=True)
+    id_disciplina = models.ForeignKey(Disciplina, ...)
+    data_aula = models.DateField()
+    quantidade = models.IntegerField()
+
+class Avaliacao(models.Model):
+    id_avaliacao = models.AutoField(primary_key=True)
+    id_disciplina = models.ForeignKey(Disciplina, ...)
+    titulo = models.CharField(max_length=150)
+    peso = models.DecimalField(max_digits=5, decimal_places=2)
+    nota = models.DecimalField(max_digits=5, decimal_places=2, null=True)
+
+class Tarefa(models.Model):
+    id_tarefa = models.AutoField(primary_key=True)
+    id_disciplina = models.ForeignKey(Disciplina, ...)
+    id_avaliacao = models.ForeignKey(Avaliacao, null=True)
+    descricao = models.CharField(max_length=255)
+    prazo = models.DateField()
+    concluida = models.BooleanField()
+
+class Notificacao(models.Model):
+    id_notificacao = models.AutoField(primary_key=True)
+    id_tarefa = models.ForeignKey(Tarefa, null=True)
+    id_avaliacao = models.ForeignKey(Avaliacao, null=True)
+    mensagem = models.CharField(max_length=255)
+    agendada_para = models.DateTimeField()
+\end{verbatim}
+
+\subsubsection{Frontend}
+Com o backend à frente do cronograma, a meta para o próximo mês é que a equipe de frontend desenvolva as telas e componentes visuais para acompanhar o que já foi estruturado no servidor, priorizando o controle de frequência e a visualização do calendário acadêmico.
+
 \end{document}
