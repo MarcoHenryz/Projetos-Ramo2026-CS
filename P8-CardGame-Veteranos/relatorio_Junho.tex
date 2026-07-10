@@ -1,0 +1,34 @@
+\newpage
+\section {Relatório de Junho}
+
+\subsection{Propostas para o mês:}
+\begin{enumerate}
+    \item Aprender a usar engine e linguagem escolhida para a programação; 
+    \item Estudar e praticar as ferramentas para criação de pixel art;
+    \item Planejar e documentar a estrutura do projeto, bem como seu escopo. 
+\end{enumerate}
+
+\subsection{Atividades Realizadas:}
+
+\subsubsection{Estudos e práticas da liguagem/engine escolhida}
+Nesse mês, os membros iniciaram seus estudos sobre as novas ferramentas. Para a programação, como foi decidido anteriormente, os membros estudaram e praticaram a ferramenta Raylib usando a linguagem C. Para as artes, as ferramentas escolhidas foram Aseprite e Piskel.
+
+Para a programação, conhecimentos básicos da criação de jogos foram desenvolvidos com a ferramenta, como o Game Loop, controle de FPS (Frames Por Segundo), controle de janela e tempo e implementação das imagens dentro do jogo.
+
+O “Game Loop”, como estudado, é um dos conceitos mais importantes no desenvolvimento de jogos. Consiste em um laço de repetição dentro do código que irá realizar as ações principais que dão procedimento ao jogo. Algumas delas incluem: 
+
+\begin{itemize}
+    \item Ler entradas (inputs): o código verifica se alguma tecla ou botão de um controle foi pressionado, retornando para o jogador o efeito daquela ação (como um personagem andar, jogar uma carta, realizar alguma ação com o personagem, etc.).
+    \item Atualizar lógica (update): calcula as ações e consequências do jogador bem como dos outros elementos do jogo (um cenário que se mexe, um inimigo que anda, etc.)
+    \item Desenhar (draw):  feedback visual para o jogador, mostrando suas ações na tela.
+\end{itemize}
+
+Em um jogo, o FPS é o que determina o “ritmo” dele. Na maioria dos jogos, o normal é 60 FPS, quantidade geralmente suficiente para que o jogo tenha um ritmo aceitável. Como foi visto pelos participantes, a função principal para esse controle na biblioteca é a SetTargetFPS(), que aceita um número inteiro como parâmetro indicando a quantidade. 
+
+\subsubsection{Prática e criação das artes iniciais}
+Outro fundamento essencial visto pelos participantes é o visual, como o tamanho da janela e as imagens. Em todo jogo, o visual é o mais importante pois é ele que dá uma resposta ao jogador do que está acontecendo. O Raylib traz ferramentas interessantes para o controle desses componentes, como a função InitWindow() que recebe as dimensões da janela como parâmetro bem como o título da janela. Para o entendimento inicial da ferramenta, alguns testes iniciais foram feitos com as funções para desenhar formas na tela como a DrawText(), DrawCircle() e EndDrawing(), sendo essa a prática inicial dos participantes. 
+
+Para criar o visual do jogo, os membros Caio e Eduardo começaram à desenhar alguns conceitos e artes das cartas como prática, bem como testes de como elas ficariam dentro do jogo. Essas cartas poderão ser utilizadas no futuro para a versão final do jogo. 
+
+\subsubsection{Idealização do escopo para ideias futuras e criação do diretório}
+Em relação ao escopo, através de discussões passadas os membros definiram as ideias iniciais do projeto, como comentado no mês de Maio. Assim, com o desenvolvimento do jogo novas ideias poderão surgir e o adiantamento das artes contribuirá com isso, pois todo progresso feito agora poderá adiantar mais tempo no futuro assim dando mais espaço para a criação de mais elementos do jogo. Além disso, o diretório para o projeto foi criado no Github, com isso deixando os membros prontos para iniciar o projeto no próximo mês após as férias.
