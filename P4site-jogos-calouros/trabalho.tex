@@ -1,79 +1,251 @@
-%\input{secao1}
-\section{Desenvolvimento do Projeto}
-
-No período de abril até maio, os alunos desenvolveram a interface geral do site e um jogo de reflexo utilizando HTML, CSS e JavaScript. Durante esse período, foram implementadas interfaces gráficas, estilização visual, lógica de programação e sistemas de interação entre jogadores.
-
-\subsection{Interface do Site}
-
-A interface principal do site foi criada utilizando HTML e CSS, permitindo a organização dos jogos desenvolvidos pelo grupo em uma estrutura simples e intuitiva.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.75\textwidth]{imgs/HTMLinterface.png}
-    \caption{Estrutura HTML da interface principal do site.}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.75\textwidth]{imgs/CSSinterface.png}
-    \caption{Estilização da interface principal utilizando CSS.}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.75\textwidth]{imgs/InterfaceSite.png}
-    \caption{Resultado visual da interface principal do site.}
-\end{figure}
-
 \clearpage
 
 \subsection{Desenvolvimento do Jogo Duelo de Reflexo}
 
-O jogo Duelo de Reflexo foi desenvolvido utilizando JavaScript para controle da lógica de jogo, HTML para estruturação da página e CSS para estilização visual e animações.
+O jogo Duelo de Reflexo foi desenvolvido utilizando HTML, CSS e JavaScript
+e permite a participação simultânea de dois jogadores. O objetivo consiste em
+pressionar a tecla correspondente ao jogador o mais rapidamente possível após
+a exibição do sinal de início da rodada.
+
+Antes de cada rodada, o sistema aguarda um intervalo de tempo aleatório. Caso
+um jogador pressione sua tecla antes do sinal, a jogada é considerada inválida
+e o participante é penalizado por ter quebrado as regras. Após o início válido,
+o programa registra o tempo de reação e determina o dano causado ao adversário.
+
+A estrutura HTML foi utilizada para organizar os elementos da interface,
+incluindo o cenário da luta, os personagens, as barras de vida, as mensagens
+de orientação e os controles da partida.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{imgs/HtmlReflexo.png}
-    \caption{Estrutura HTML da página do jogo Duelo de Reflexo.}
+    \caption{Estrutura HTML utilizada no jogo Duelo de Reflexo.}
+    \label{fig:html-reflexo}
 \end{figure}
+
+A estilização visual foi implementada utilizando CSS, responsável pelo
+posicionamento dos personagens, organização das barras de vida, composição
+do cenário e aplicação dos efeitos visuais apresentados durante os ataques.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{imgs/ReflexoCss1.png}
-    \caption{Trecho da estilização visual do jogo utilizando CSS.}
+    \caption{Trecho da estilização CSS utilizada no jogo Duelo de Reflexo.}
+    \label{fig:css-reflexo}
 \end{figure}
+
+A lógica da aplicação foi implementada em JavaScript. O programa controla
+o intervalo aleatório entre as rodadas, identifica o jogador que pressionou
+a tecla primeiro, calcula o tempo de reação e determina o dano causado.
+
+O dano aplicado varia de acordo com a velocidade da resposta. Tempos menores
+resultam em ataques mais fortes, enquanto respostas mais lentas causam uma
+quantidade menor de dano. O código também atualiza as barras de vida,
+controla o encerramento da partida e exibe o jogador vencedor.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{imgs/ReflexoJs1.png}
-    \caption{Trecho da lógica implementada em JavaScript para o jogo.}
+    \caption{Trecho da implementação em JavaScript do jogo Duelo de Reflexo.}
+    \label{fig:js-reflexo}
 \end{figure}
+
+A Figura \ref{fig:jogo-reflexo} apresenta a tela do jogo após o encerramento
+de uma partida.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{imgs/jogoReflexo.png}
+    \includegraphics[width=0.85\textwidth]{imgs/jogoReflexo.png}
     \caption{Tela do jogo Duelo de Reflexo em funcionamento.}
+    \label{fig:jogo-reflexo}
 \end{figure}
-
-\newpage
 
 \clearpage
 
 \subsection{Desenvolvimento do Jogo da Memória}
 
-O jogo da memória foi desenvolvido utilizando HTML, CSS e JavaScript, com foco em manipulação de elementos DOM, eventos de clique e efeitos visuais de rotação das cartas.
+O jogo da memória foi desenvolvido utilizando HTML, CSS e JavaScript. O
+objetivo do jogador é encontrar todos os pares de cartas com imagens
+correspondentes. Para isso, duas cartas podem ser reveladas a cada jogada.
+
+A estrutura HTML foi utilizada para criar o tabuleiro e organizar
+individualmente as cartas. Cada carta possui uma face frontal, contendo uma
+imagem, e uma face traseira, exibida enquanto a carta ainda não foi selecionada.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{imgs/memoriaHtml.png}
-    \caption{Estrutura HTML utilizada para organização das cartas do jogo da memória.}
+    \caption{Estrutura HTML utilizada na construção do jogo da memória.}
+    \label{fig:html-memoria}
 \end{figure}
+
+A estilização foi realizada utilizando CSS. Foram definidos o posicionamento
+das cartas, as dimensões do tabuleiro, a aparência das faces e o efeito de
+rotação utilizado para representar visualmente a abertura e o fechamento de
+cada carta.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{imgs/memoriaCss.png}
-    \caption{Trecho da estilização CSS utilizada para posicionamento e animação das cartas.}
+    \includegraphics[width=0.70\textwidth]{imgs/memoriaCss.png}
+    \caption{Trecho da estilização CSS utilizada no jogo da memória.}
+    \label{fig:css-memoria}
+\end{figure}
+
+A lógica da partida foi implementada em JavaScript por meio da manipulação do
+DOM e do tratamento de eventos de clique. Quando a primeira carta é
+selecionada, ela é armazenada temporariamente. Após a seleção da segunda
+carta, o programa compara os identificadores associados às duas imagens.
+
+Quando as cartas formam um par, seus eventos de clique são removidos e elas
+permanecem abertas. Caso sejam diferentes, o tabuleiro é temporariamente
+bloqueado e as cartas são fechadas novamente após um pequeno intervalo de
+tempo. Esse bloqueio impede que outras cartas sejam selecionadas durante a
+animação.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/memoriaJs.png}
+    \caption{Trecho da implementação em JavaScript do jogo da memória.}
+    \label{fig:js-memoria}
+\end{figure}
+
+As cartas são embaralhadas automaticamente no início da partida, alterando
+sua posição no tabuleiro. A Figura \ref{fig:jogo-memoria} apresenta o resultado
+visual do jogo em execução.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.80\textwidth]{imgs/jogoMemoria.png}
+    \caption{Tela do jogo da memória em funcionamento.}
+    \label{fig:jogo-memoria}
 \end{figure}
 
 \clearpage
-%\input{secao2}
+
+\subsection{Desenvolvimento do Jogo da Velha}
+
+O jogo da velha foi desenvolvido utilizando HTML, CSS e JavaScript, oferecendo dois modos de jogo: jogador contra jogador e jogador contra computador. O objetivo foi implementar uma versão digital do jogo clássico, com controle automático das jogadas, identificação das condições de vitória e contabilização do placar entre as partidas.
+
+A estrutura HTML foi utilizada para organizar o tabuleiro, os painéis de pontuação e os botões responsáveis pelo controle do jogo.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/velhaHtml.png}
+    \caption{Estrutura HTML utilizada na construção do jogo da velha.}
+\end{figure}
+
+A estilização foi desenvolvida utilizando CSS, sendo responsável pela organização do tabuleiro, escolha das cores, efeitos visuais e adaptação dos elementos gráficos ao tema do projeto.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.70\textwidth]{imgs/velhaCss.png}
+    \caption{Trecho da estilização CSS utilizada no jogo da velha.}
+\end{figure}
+
+Toda a lógica da partida foi implementada em JavaScript. Foram desenvolvidas funções para controle das jogadas, alternância entre os jogadores, verificação automática das combinações vencedoras, detecção de empate, atualização do placar e reinicialização das partidas.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/velhaJs.png}
+    \caption{Trecho da implementação em JavaScript do jogo da velha.}
+\end{figure}
+
+A Figura abaixo apresenta o resultado final do jogo em funcionamento.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.55\textwidth]{imgs/jogoVelha.png}
+    \caption{Tela do jogo da velha em execução.}
+\end{figure}
+
+\clearpage
+
+\subsection{Desenvolvimento do Jogo Pedra, Papel e Tesoura}
+
+O jogo Pedra, Papel e Tesoura foi desenvolvido utilizando HTML, CSS e JavaScript e permite partidas entre dois jogadores. Durante cada rodada, ambos realizam suas escolhas de forma independente e, após a confirmação das jogadas, o sistema compara automaticamente as opções selecionadas para determinar o vencedor.
+
+A estrutura HTML foi utilizada para organizar as telas de escolha dos jogadores, área de exibição do resultado e controles de reinicialização da partida.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/pptHtml.png}
+    \caption{Estrutura HTML utilizada no jogo Pedra, Papel e Tesoura.}
+\end{figure}
+
+A estilização visual foi desenvolvida utilizando CSS, sendo responsável pelos efeitos de transição entre as telas, animações das cartas de escolha e organização dos elementos gráficos presentes na interface.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.70\textwidth]{imgs/pptCss.png}
+    \caption{Trecho da estilização CSS utilizada no jogo Pedra, Papel e Tesoura.}
+\end{figure}
+
+A lógica do jogo foi implementada em JavaScript, contemplando o gerenciamento dos turnos, armazenamento das escolhas dos jogadores, comparação das jogadas segundo as regras tradicionais do jogo e exibição automática do vencedor de cada rodada.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/pptJs.png}
+    \caption{Trecho da implementação em JavaScript do jogo Pedra, Papel e Tesoura.}
+\end{figure}
+
+A Figura abaixo apresenta uma partida em execução.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/jogoPPT.png}
+    \caption{Tela do jogo Pedra, Papel e Tesoura em funcionamento.}
+\end{figure}
+
+\clearpage
+
+\subsection{Desenvolvimento do Jogo da Forca}
+
+O jogo da forca foi desenvolvido utilizando HTML, CSS e JavaScript, oferecendo os modos de um e dois jogadores. No modo individual, as palavras são selecionadas automaticamente a partir de um banco de dados interno, enquanto no modo para dois jogadores um participante informa a palavra que deverá ser descoberta pelo adversário.
+
+A estrutura HTML organiza os elementos da interface, incluindo área de exibição da palavra, teclado virtual, campo para tentativa de resposta, painel de dicas e botões de controle da partida.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/forcaHtml.png}
+    \caption{Estrutura HTML utilizada no jogo da forca.}
+\end{figure}
+
+A aparência visual foi desenvolvida utilizando CSS, sendo responsável pela disposição dos elementos na tela, efeitos de destaque para as letras selecionadas, animações e identidade visual baseada no tema do projeto.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.70\textwidth]{imgs/forcaCss.png}
+    \caption{Trecho da estilização CSS utilizada no jogo da forca.}
+\end{figure}
+
+Toda a lógica da aplicação foi implementada em JavaScript. Entre as funcionalidades desenvolvidas destacam-se o gerenciamento do banco de palavras, validação das letras escolhidas, atualização dinâmica da palavra exibida, controle do número de erros, sistema de dicas, verificação das condições de vitória ou derrota e reinicialização automática das partidas.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/forcaJs.png}
+    \caption{Trecho da implementação em JavaScript do jogo da forca.}
+\end{figure}
+
+A Figura abaixo apresenta o resultado final do jogo em funcionamento.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.65\textwidth]{imgs/jogoForca.png}
+    \caption{Tela do jogo da forca em execução.}
+\end{figure}
+
+\clearpage
+
+\section{Resultados Obtidos}
+
+Ao término do projeto foi desenvolvida uma plataforma denominada \textit{Play UEL}, composta por cinco jogos digitais implementados integralmente utilizando HTML, CSS e JavaScript. Todos os jogos foram integrados em uma interface única, permitindo ao usuário navegar facilmente entre as diferentes atividades propostas.
+
+Cada jogo apresenta características próprias de interação, exigindo a implementação de diferentes estruturas de dados, manipulação de eventos, atualização dinâmica da interface e controle do estado da aplicação. Durante o desenvolvimento foram aplicados conceitos relacionados à programação web, manipulação do DOM, estilização responsiva, lógica de programação e organização modular do código.
+
+Os testes realizados demonstraram o correto funcionamento das funcionalidades implementadas, incluindo detecção de vitórias, derrotas e empates, atualização automática das interfaces, reinicialização das partidas e interação entre jogadores. O projeto atingiu os objetivos propostos, resultando em uma plataforma funcional, visualmente padronizada e de fácil utilização.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{imgs/InterfaceSite.png}
+    \caption{Interface final da plataforma Play UEL contendo todos os jogos desenvolvidos.}
+\end{figure}
