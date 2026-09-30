@@ -447,6 +447,8 @@
 	\end{itemize}
 	
 	
+	
+	
 	\section{Relatório do mês de Agosto e Setembro}
 	
 	Nesses dois meses a pesquisa do projeto se concentrou na biblioteca pygames, para criar umaa interface para o chat, e também para modularizar o código para melhorar sua organização e coesão.
@@ -458,7 +460,7 @@
 		\item \url{https://medium.com/@habbema/modulariza%C3%A7%C3%A3o-em-python-9b4a8c250bfd}
 	\end{itemize}  
 	
-	O código já modularizado com a interface incluida ficou divido em nove módulos que são \footnote{todos os nome tem .py no final}:
+	O código já modularizado com a interface incluida ficou divido em nove módulos que são \footnote{todos os arquivos tem .py no final}:
 	
 	\begin{itemize}
 		\item \texttt{client\_handler}
@@ -479,6 +481,9 @@
 	
 	\begin{itemize}
 		\item \texttt{client\_handler}
+		
+		Este módulo é responsável por mandar as mesagens entre os clientes, codificando-as e decodificando-as ao chegar.
+		
 		\begin{lstlisting}
 			from config import HEADER, FORMAT, DISCONNECT_MESSAGE
 			from client_manager import broadcast, remove_client
@@ -509,6 +514,9 @@
 		\end{lstlisting}	
 		
 		\item \texttt{manage\_client}
+		
+		Este módulo é responsável por gererciar os usuários conectados, exibindo as mensagens de conexão e de desconexão. Ademais, também é aqui que fica a lista de clientes e de seus respectivos nomes.
+		
 		\begin{lstlisting}
 			clients = []
 			nicknames = []
@@ -538,6 +546,9 @@
 		\end{lstlisting}
 		
 		\item \texttt{client}
+		
+		Está é a main do código do cliente, onde aqui são feitas as operações que unem os outros módulos, para que assim seja possível o funcionamento do chat, com o envio e recebimento de mensagens além da interface.
+		
 		\begin{lstlisting}
 			import pygame
 			import interface
@@ -607,6 +618,9 @@
 	\begin{itemize}
 		
 		\item \texttt{server\_connection}
+		
+		Este módulo é responsável pelo aviso de conexões do cliente com o servidor central, mostrando o nome de quem aderiu a conversa.
+		
 		\begin{lstlisting}
 			import threading
 			
@@ -644,6 +658,9 @@
 		\end{lstlisting}
 		
 		\item \texttt{server\_socket}
+		
+		Módulo responsável pela integração da biblioteca socket, responsável pela possibilidade de intercomunicação, e criação do server em si.
+		
 		\begin{lstlisting}
 			import socket
 			
@@ -662,6 +679,9 @@
 		\end{lstlisting}
 		
 		\item \texttt{server}
+		
+		Main do server, que o inicializa e mostra a mensagem que ele está apto a receber clientes.
+		
 		\begin{lstlisting}
 			from server_socket import create_server
 			from server_connection import receive
