@@ -90,3 +90,28 @@ class Notificacao(models.Model):
 Com o backend à frente do cronograma, a meta para o próximo mês é que a equipe de frontend desenvolva as telas e componentes visuais para acompanhar o que já foi estruturado no servidor, priorizando o controle de frequência e a visualização do calendário acadêmico.
 
 \end{document}
+
+\section{Metas e Atividades Realizadas de Agosto e Setembro}
+
+\subsection{Objetivos propostos para o período:}
+\begin{enumerate}
+    \item \textbf{Integração de API e Autenticação:} Configuração do consumo de endpoints e persistência de sessão.
+    \item \textbf{Módulo de Disciplinas:} Desenvolvimento da listagem interativa de matérias, detalhamento visual e sistema de anotações.
+    \item \textbf{Módulo de Organização de Tempo:} Construção da visualização agregada do calendário e do gerenciamento do status de tarefas acadêmicas.
+\end{enumerate}
+
+\subsection{Atividades realizadas no período:}
+
+\subsubsection{Integração, Login e Dashboard}
+\begin{itemize}
+    \item \textbf{Configuração da API (\texttt{src/services/api.js}):} Criação da instância base utilizando Axios e implementação de um interceptor projetado para resgatar e injetar automaticamente o token de acesso armazenado no dispositivo.
+    \item \textbf{Fluxo de Autenticação:} Conexão efetiva das telas de Login e Cadastro, implementando a validação de dados e salvando o token recebido.
+    \item \textbf{Dashboard Inicial:} Desenvolvimento da tela principal de resumo geral, exibindo os cartões de visão rápida, as faltas acumuladas, a próxima avaliação e tarefas pendentes.
+\end{itemize}
+
+\subsubsection{Módulo de Disciplinas e Anotações}
+\begin{itemize}
+    \item \textbf{Listagem de Disciplinas (\texttt{DisciplinasScreen.js}):} Estruturação da tela em formato de cartões interativos. Cada cartão apresenta a barra de identificação visual (\texttt{cor\_hex}), nome, código e professor. Foram adicionados mini-cards informativos com o total de faltas e o status da próxima avaliação (tipo e data).
+    \item \textbf{Detalhamento da Disciplina (\texttt{DisciplinaDetalheScreen.js}):} Construção da interface acionada ao tocar no cartão da matéria. A tela apresenta um cabeçalho colorido dinamicamente, seção de Faltas, seção de Avaliações listando os pesos e notas, e a área de Anotações contendo a listagem de registros e o formulário de adição.
+    \item \textbf{Ajustes de Navegação:} Atualização do arquivo \texttt{TabNavigator.js} para renderizar nativamente a \texttt{DisciplinasScreen} no lugar do placeholder, além do registro da rota \texttt{DisciplinaDetalhe} no escopo do \texttt{AppNavigator.js}.
+\end{itemize}
