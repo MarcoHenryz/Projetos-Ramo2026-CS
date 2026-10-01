@@ -67,9 +67,9 @@
 	
 	Referências:
 	\begin{itemize}
-		\item \url{https://www.eset.com/br/blog/cultura/o-que-e-um-trojan-como-funciona-e-como-se-proteger/}
-		\item \url{https://pt.wikipedia.org/wiki/Cavalo_de_troia_(computacao)}
-		\item \url{https://www.kaspersky.com.br/resource-center/threats/trojans}
+		\item \cite{eset}
+		\item \cite{wiki1}
+		\item \cite{kaspersky_trojan}
 	\end{itemize}
 	
 	A segunda pesquisa do mês de abril foi: Entender o básico de como a internet funciona:
@@ -112,7 +112,7 @@
 	C = 2\pi r \qquad A_c = \pi r^2 \qquad V = \frac{4}{3}\pi r^3 \qquad A_s = 4\pi r^2
 	\]
 	
-	\begin{lstlisting}
+	\begin{pycode}
 		raio = float(input('informe seu raio\n'))
 		pi = 3.1415
 		c = 2*pi*raio
@@ -120,7 +120,7 @@
 		ac = pi*raio**2
 		ass = 4*pi*raio**2
 		print(f"comprimeto: {c}\nvolume: {v}\narea do circulo: {ac}\narea superficial: {ass}")
-	\end{lstlisting}
+	\end{pycode}
 	
 	Na primeira semana de maio, a atividade foi configurar o ambiente de desenvolvimento:
 	\begin{itemize}
@@ -142,7 +142,7 @@
 	
 	\subsection*{Parte do cliente}
 	
-	\begin{lstlisting}
+	\begin{pycode}
 		import socket
 		
 		HEADER = 64
@@ -174,11 +174,11 @@
 		connected = False
 		
 		client.close()
-	\end{lstlisting}
+	\end{pycode}
 	
 	\subsection*{Parte do servidor}
 	
-	\begin{lstlisting}
+	\begin{pycode}
 		import socket
 		import threading
 		
@@ -220,7 +220,7 @@
 		
 		print("[STARTING] server is starting...")
 		start()
-	\end{lstlisting}
+	\end{pycode}
 	
 	\subsection*{Explicação do código}
 	
@@ -288,7 +288,7 @@
 	
 	\subsection*{Nova versão do cliente}
 	
-	\begin{lstlisting}
+	\begin{pycode}
 		import socket
 		import threading
 		import time
@@ -353,11 +353,11 @@
 		
 		send_thread = threading.Thread(target=send)
 		send_thread.start()
-	\end{lstlisting}
+	\end{pycode}
 	
 	\subsection*{Nova versão do servidor}
 	
-	\begin{lstlisting}
+	\begin{pycode}
 		import socket
 		import threading
 		
@@ -426,7 +426,7 @@
 		
 		print("[STARTING] server is listening...")
 		receive()
-	\end{lstlisting}
+	\end{pycode}
 	
 	As principais atualizações feitas são:
 	
@@ -484,7 +484,7 @@
 		
 		Este módulo é responsável por mandar as mesagens entre os clientes, codificando-as e decodificando-as ao chegar.
 		
-		\begin{lstlisting}
+		\begin{pycode}
 			from config import HEADER, FORMAT, DISCONNECT_MESSAGE
 			from client_manager import broadcast, remove_client
 			
@@ -511,13 +511,13 @@
 			break
 			
 			client.close()
-		\end{lstlisting}	
+		\end{pycode}	
 		
 		\item \texttt{manage\_client}
 		
 		Este módulo é responsável por gererciar os usuários conectados, exibindo as mensagens de conexão e de desconexão. Ademais, também é aqui que fica a lista de clientes e de seus respectivos nomes.
 		
-		\begin{lstlisting}
+		\begin{pycode}
 			clients = []
 			nicknames = []
 			
@@ -543,13 +543,13 @@
 			broadcast(f"{nickname} left the chat".encode("utf-8"))
 			
 			nicknames.remove(nickname)
-		\end{lstlisting}
+		\end{pycode}
 		
 		\item \texttt{client}
 		
 		Está é a main do código do cliente, onde aqui são feitas as operações que unem os outros módulos, para que assim seja possível o funcionamento do chat, com o envio e recebimento de mensagens além da interface.
 		
-		\begin{lstlisting}
+		\begin{pycode}
 			import pygame
 			import interface
 			import comunicacao
@@ -609,7 +609,7 @@
 			
 			if __name__ == "__main__":
 			main()
-		\end{lstlisting}
+		\end{pycode}
 	\end{itemize}
 	
 	
@@ -621,7 +621,7 @@
 		
 		Este módulo é responsável pelo aviso de conexões do cliente com o servidor central, mostrando o nome de quem aderiu a conversa.
 		
-		\begin{lstlisting}
+		\begin{pycode}
 			import threading
 			
 			from config import FORMAT
@@ -655,13 +655,13 @@
 			
 			thread.start()
 			
-		\end{lstlisting}
+		\end{pycode}
 		
 		\item \texttt{server\_socket}
 		
 		Módulo responsável pela integração da biblioteca socket, responsável pela possibilidade de intercomunicação, e criação do server em si.
 		
-		\begin{lstlisting}
+		\begin{pycode}
 			import socket
 			
 			from config import ADDR
@@ -676,13 +676,13 @@
 			
 			return server
 			
-		\end{lstlisting}
+		\end{pycode}
 		
 		\item \texttt{server}
 		
 		Main do server, que o inicializa e mostra a mensagem que ele está apto a receber clientes.
 		
-		\begin{lstlisting}
+		\begin{pycode}
 			from server_socket import create_server
 			from server_connection import receive
 			
@@ -692,7 +692,7 @@
 			
 			receive(server)
 			
-		\end{lstlisting}
+		\end{pycode}
 	\end{itemize}
 	
 	
@@ -701,12 +701,12 @@
 	\begin{itemize}
 		
 		\item {Explicação}
-		A interface do código consiste basicamente em duas telas. A primeira é uma onde o usuário informa seu nome e, após ele apertar Enter, é direcionado para a próxima. Essa nova tela é o chat em si, onde o usuário pode interagir com os outros.
+		Toda a interface é baseada na biblioteca de python, Pygames. Sendo assim, o código consiste basicamente em duas telas, a primeira é uma onde o usuário informa seu nome e, após ele apertar Enter, é direcionado para a próxima. Essa nova tela é o chat em si, onde o usuário pode interagir com os outros.
 		
 		A lógica por trás é simples: na tela inicial, após o usuário apertar Enter, ela é excluída e imediatamente reposta pela tela do chat. Além do mais, para fazer o efeito de subir das mensagens, é usada uma lista de palavras (as frases enviadas pelos usuários). Conforme vão sendo enviadas novas mensagens, seu eixo Y é atualizado, fazendo-as subir. Por fim, para não sobrecarregar a memória, quando seu Y passa o tamanho da tela, saindo da imagem, a frase é apagada da lista.
 		
 		\item {Código}
-		\begin{lstlisting}
+		\begin{pycode}
 			import pygame
 			
 			AZUL = (1, 36, 86)
@@ -769,7 +769,7 @@
 			def encerrar_interface():
 			pygame.quit()
 			
-		\end{lstlisting}
+		\end{pycode}
 	\end{itemize}
 	
 	
@@ -780,7 +780,7 @@
 		
 		Parte da lógica da comunicação entre chats, utiliza theards e sockets. A lógica da comunicação é similar as versões anteriores, porém agora modularizada. 
 		
-		\begin{lstlisting}
+		\begin{pycode}
 			import socket
 			import threading
 			import interface 
@@ -845,20 +845,74 @@
 			client.close()
 			except:
 			pass
-		\end{lstlisting}
+		\end{pycode}
 		
 		\item \textbf{Configurações}
 		
 		O módulo de configurações serve para centralizar todas as inforações vitais da rede do chat. Onde nele é definido o IP do servidor, o padrão para a codificação do texto, porta de comunicação, cabeçalho de envio de informações. A sua separação é importante para em caso de manutenções, troca de servidor por exemplo, fique mais fácil para serem feitas.
 		
-		\begin{lstlisting}
+		\begin{pycode}
 			HEADER = 64
 			PORT = 5050
 			SERVER = "localhost"
 			ADDR = (SERVER, PORT)
 			FORMAT = "utf-8"
 			DISCONNECT_MESSAGE = "!DISCONNECT"        
-		\end{lstlisting}
+		\end{pycode}
+		
+		\subsection*{Demostração de como ficou a interface}
+		
+		\begin{itemize}
+			
+			
+			\item Tela inicial do chat:
+			
+			\begin{figure}[H]
+				
+				\centering
+				\includegraphics[width=0.75\textwidth]{imagens/Tela-1.png}
+			
+			\end{figure}
+			
+			\item Tela após entrar no chat:
+			
+			\begin{figure}[H]
+				
+				\centering
+				\includegraphics[width=0.75\textwidth]{imagens/Tela-2.png}
+				
+				
+			\end{figure}
+			
+			\item Exemplo de mensagem enviada:
+			
+			\begin{figure}[H]
+				
+				\centering
+				\includegraphics[width=0.75\textwidth]{imagens/Tela-3.png}
+			
+			\end{figure}
+			
+			\item Exemplo de conversa e mensagem de saída do chat:
+			
+			\begin{figure}[H]
+				
+				\centering
+				\includegraphics[width=0.75\textwidth]{imagens/Tela-4.png}
+				
+				
+			\end{figure}
+			
+		\end{itemize}		
+		
+		
+		\cite{kaspersky_trojan}
+		
+		\cite{mdn_internet}
+		
+	
+		
+		
 		
 	\end{itemize}
 	

@@ -1,0 +1,79 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{python-code}[2026/10/01 Bloco de codigo Python, tema escuro]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+\RequirePackage[listings,skins,breakable]{tcolorbox}
+
+% Paleta
+\definecolor{codebg}{HTML}{1C2128}
+\definecolor{codetext}{HTML}{C9D1D9}
+\definecolor{codekw}{HTML}{FF7B72}
+\definecolor{codetype}{HTML}{3DDC97}
+\definecolor{codecomment}{HTML}{768390}
+\definecolor{codestring}{HTML}{A5D6FF}
+\definecolor{codenumber}{HTML}{79C0FF}
+\definecolor{codefunc}{HTML}{D2A8FF}
+
+% Acentos do portugues dentro do listings
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {â}{{\^a}}1 {ê}{{\^e}}1 {ô}{{\^o}}1
+  {ã}{{\~a}}1 {õ}{{\~o}}1 {Ã}{{\~A}}1 {Õ}{{\~O}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {’}{{'}}1 {‘}{{`}}1
+}
+
+\lstdefinestyle{pythondark}{
+  language=Python,
+  basicstyle=\ttfamily\small\color{codetext},
+  keywordstyle=\color{codekw},
+  keywordstyle={[2]\color{codetype}},
+  keywordstyle={[3]\color{codefunc}},
+  commentstyle=\color{codecomment},
+  stringstyle=\color{codestring},
+  numberstyle=\color{codenumber},
+  identifierstyle=\color{codetext},
+  morekeywords={self,cls,match,case,async,await,None,True,False},
+  morekeywords=[2]{int,float,str,bool,list,dict,set,tuple,bytes,object},
+  morekeywords=[3]{print,len,range,isinstance,super,enumerate,zip,open},
+  showstringspaces=false,
+  columns=fullflexible,
+  keepspaces=true,
+  upquote=true,
+  tabsize=4,
+  breaklines=true,
+  breakatwhitespace=false,
+  postbreak=\mbox{\textcolor{codecomment}{$\hookrightarrow$}\space},
+  numbers=none,
+  xleftmargin=0pt,
+  aboveskip=0pt,
+  belowskip=0pt,
+}
+
+\tcbset{
+  pycode/.style={
+    enhanced,
+    breakable,
+    colback=codebg,
+    colframe=codebg,
+    boxrule=0pt,
+    arc=4pt,
+    left=14pt, right=14pt, top=12pt, bottom=12pt,
+    before skip=10pt, after skip=10pt,
+    listing only,
+    listing options={style=pythondark},
+  }
+}
+
+% Ambiente: \begin{pycode} ... \end{pycode}
+\newtcblisting{pycode}{pycode}
+
+% Arquivo externo: \pycodefile{caminho/arquivo.py}
+\newcommand{\pycodefile}[2][]{%
+  \tcbinputlisting{pycode, listing file={#2}, #1}}
+
+% Trecho em linha: \pyinline{x = 1}
+\newcommand{\pyinline}[1]{\colorbox{codebg}{\lstinline[style=pythondark]{#1}}}
